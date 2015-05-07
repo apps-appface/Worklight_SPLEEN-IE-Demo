@@ -1,0 +1,48 @@
+a,abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video
+	{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0 auto;
+	width: 100%;
+}
+
+[data-role="button"] {
+	width: 80%;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00CCFF),
+		to(#0066CC));
+	border-radius: 15px;
+}
+
+input#round {
+	width: 100px;
+	height: 100px;
+	background-color: #ff0000;
+	border: 1px solid #ff0000;
+	color: #fff;
+	font-size: 1.6em;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .75);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .75);
+	box-shadow: 2px 2px 15px rgba(0, 0, 0, .75);
+}
+
+input#round:hover {
+	background: #c20b0b;
+	border: 1px solid #c20b0b;
+	-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, .75);
+	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, .75);
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .75);
+}
+
+H3 {
+	margin: 0 0 .2em 0;
+}
+
+#htmlRating {
+	margin: 0 0 1.7em 0;
+}

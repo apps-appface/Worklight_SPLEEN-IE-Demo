@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:loginConfiguration xmlns:tns="http://www.worklight.com/auth/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <staticResources>
+        <resource id="subscribeServlet" securityTest="SubscribeServlet">
+            <urlPatterns>/subscribeSMS*;/receiveSMS*</urlPatterns>
+        </resource>
+    </staticResources>
+    <securityTests>
+        <customSecurityTest name="Spleen-securityTest">
+            <test realm="wl_directUpdateRealm" step="1"/>
+            <test isInternalUserID="true" realm="SpleenRealm"/>
+        </customSecurityTest>
+        <mobileSecurityTest name="PushApplication-strong-mobile-securityTest">
+            <testUser realm="SpleenRealm"/>
+            <testDeviceId provisioningType="none"/>
+        </mobileSecurityTest>
+    </securityTests>
+    <realms>
+        <realm loginModule="SpleenModule" name="SpleenRealm">
+            <className>com.worklight.integration.auth.AdapterAuthenticator</className>
+            <parameter name="login-function" value="UserAdapter.onAuthRequired"/>
+            <parameter name="logout-function" value="UserAdapter.onLogout"/>
+        </realm>
+    </realms>
+    <loginModules>
+        <loginModule name="SpleenModule">
+            <className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+        </loginModule>
+    </loginModules>
+</tns:loginConfiguration>

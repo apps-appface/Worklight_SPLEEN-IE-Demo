@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+    Licensed Materials - Property of IBM
+    5725-I43 (C) Copyright IBM Corp. 2011, 2013. All Rights Reserved.
+    US Government Users Restricted Rights - Use, duplication or
+    disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<wl:adapter xmlns:wl="http://www.ibm.com/mfp/integration" xmlns:sql="http://www.ibm.com/mfp/integration/sql" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UserAdapter">
+    <!--This adapter has been upgraded, For more information about the changes, see the "Adapter timeout and concurrency" topic in the product Knowledge Center.-->
+    <displayName>UserAdapter</displayName>
+	<description>UserAdapter</description>
+	<connectivity>
+		<connectionPolicy xsi:type="sql:SQLConnectionPolicy">
+			<dataSourceDefinition>
+				<driverClass>com.mysql.jdbc.Driver</driverClass>
+				<url>jdbc:mysql://localhost:3306/SPLEEN-IE</url>
+			    <user>root</user>
+    			<password/> 
+			</dataSourceDefinition>
+		</connectionPolicy>
+		<!--<loadConstraints maxConcurrentConnectionsPerNode="5" /> Element loadConstraint was removed as it is no longer supported. For more information, see the "Adapter timeout and concurrency" topic in the product Knowledge Center.-->
+	</connectivity>
+
+	<procedure name="setRating"/>
+	<procedure name="getRating"/>
+	
+	<procedure name="setSetting"/>
+	<procedure name="insertSetting"/>
+	<procedure name="getSetting"/>
+	
+	<procedure name="getUserDetail"/>
+	<procedure name="setUserDetail"/>
+	
+	<procedure name="getVSRUserDetail"/>
+	
+	<procedure name="getUserVaccinationDetail" securityTest="Spleen-securityTest"/>
+	
+	<procedure name="getUserVaccinationDetailForPush"/>
+	
+	<procedure name="updateVaccinationTable"/>
+	
+	<procedure name="submitAuthentication"/>
+	
+	<procedure name="getVSRDetail"/>
+	
+	<procedure name="getSecretData"/>
+
+</wl:adapter>
